@@ -58,7 +58,7 @@ body.hide-scrollbar {
 
   @media screen and (max-device-width: 500px) {
     .phone-top-bar {
-      background-color: antiquewhite;
+      background-color: rgb(0, 0, 0);
       height: 160px;
 
       display: flex;
@@ -109,6 +109,52 @@ body.hide-scrollbar {
       opacity: 1;
       
       transform: translateX(0);
+    }
+
+    .container-form {
+      display: none;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+    }
+
+    .form {
+      background-color: antiquewhite;
+      width: 80vw;
+      height: 70vh;
+      height: 70dvh;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+
+      color: black;
+      font-size: 50px;
+
+      .cross {
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+
+        img {
+          height: 50px;
+          width: 50px;
+        }
+      }
+
+      .large-select {
+        width: 200px;
+        height: 100px;
+        font-size: 50px;
+      }
+    }
+
+    .container-form.show {
+      display: block;
     }
     
     .img-clermont {

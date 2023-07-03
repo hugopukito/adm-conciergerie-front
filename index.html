@@ -9,33 +9,59 @@
   <body>
     <div class="main">
       <div class="phone-top-bar">
-        <div class="menu-button" onclick="toggleNavBar()">
+        <div id="menu-button" class="menu-button" onclick="toggleNavBar()">
           <img src="images/menu-bars.png">
         </div>
         <div class="logo">
-          <img src="images/luffy.png">
+          <img src="images/logo.jpg">
         </div>
       </div>
       <nav id="nav">
-        <ul onclick="clickedNavBar()">
-          <li><a href="#type_de_bien">Type de bien</a></li>
-          <li><a href="#surface">Surface</a></li>
-          <li><a href="#etat_du_bien">État du bien</a></li>
-          <li><a href="#pret_a_louer">Prêt à louer</a></li>
+        <ul>
+          <li><a href="#conciergerie" onclick="toggleNavBar()">Conciergerie</a></li>
+          <li><a href="#nos_services" onclick="toggleNavBar()">Nos services</a></li>
+          <li><a onclick="openForm()" style="cursor: pointer;">Formulaire</a></li>
+          <li><a href="#contact" onclick="toggleNavBar()">Contact</a></li>
         </ul>
       </nav>
+      <div id="container-form" class="container-form">
+        <div class="form">
+          <div class="cross" onclick="closeForm()">
+            <img src="images/cross.png">
+          </div>
+          <div>—FORMULAIRE—</div>
+
+          <select class="large-select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+          </select>
+          
+        </div>
+      </div>
       <div class="img-clermont"></div>
-      <div id="type_de_bien" class="element">
-        Type de bien
+      <div id="conciergerie" class="element">
+        —CONCIERGERIE—
+        ADM CONCIERGERIE
+        Nous proposons de la conciergerie privée pour les propriétaires de bien immobilier locatif courte durée en proposant de la rénovation, de la décoration d’intérieur et de la communication digitale de façon unique
+        Nous prenons en charge à 100% tout le processus de gestion des biens locatifs courte durée
+        ADM s'occupe de tout de A à Z.
       </div>
-      <div id="surface" class="element">
-        Surface
+      <div id="nos_services" class="element">
+        —NOS SERVICES—
+        Conciergerie : service de conciergerie avec suivi personnalisé
+        Rénovation : Augmenter le confort et le bienêtre du séjour
+        Décoration d'intérieur : Augmenter l'attractivité des biens
+        Communication digitale : Augmenter la visibilité des annonces locatives 
+        Prestations de services : prestations de nettoyage sur demande.
       </div>
-      <div id="etat_du_bien" class="element">
-        État du bien
-      </div>
-      <div id="pret_a_louer" class="element">
-        Prêt à louer
+      <div id="contact" class="element">
+        —CONTACT—
+        Avec le logo
+        Adresse mail : ADM.CONCIERGERIE.63@gmail.com
+        Téléphone portable : 0787113747
+        Instagram : adm.conciergerie
+        Adresse : 14 avenue Carnot Clermont-Ferrand 63000 
       </div>
     </div>
   </body>
