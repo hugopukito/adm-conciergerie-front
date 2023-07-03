@@ -1,27 +1,77 @@
+var firstForm = document.getElementById("firstForm");
+
+firstForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  var formData = new FormData(firstForm);
+  console.log(formData)
+
+  // fetch(form.action, {
+  //   method: 'POST',
+  //   body: formData
+  // })
+  // .then(response => response.text())
+  // .then(data => {
+  //   console.log(data);
+  //   // Process the response data as needed
+  // })
+  // .catch(error => {
+  //   console.error('Error:', error);
+  // });
+});
+
+var hideBellowNav = false
 
 function toggleNavBar() {
+  var bellowNav = document.getElementById('bellow-nav')
+  if (hideBellowNav) {
+    bellowNav.style.display = 'block'
+    hideBellowNav = false
+  } else {
+    bellowNav.style.display = 'none'
+    hideBellowNav = true
+  }
+
   var nav = document.getElementById('nav')
   nav.classList.toggle('show')
-  document.body.classList.toggle('hide-scrollbar');
+}
+
+function scrollToDiv(id) {
+  var bellowNav = document.getElementById('bellow-nav')
+  bellowNav.style.display = 'block'
+  hideBellowNav = false
+
+  var targetDiv = document.getElementById(id)
+  targetDiv.scrollIntoView()
+
+  var nav = document.getElementById('nav')
+  nav.classList.toggle('show')
 }
 
 function openForm() {
-  toggleNavBar()
-  var form = document.getElementById('container-form')
-  form.classList.add('show')
-  document.body.classList.add('hide-scrollbar');
+  var nav = document.getElementById('nav')
+  nav.classList.toggle('show')
+
+  var formDiv = document.getElementById('container-form')
+  formDiv.classList.add('show')
 
   var menuButton = document.getElementById('menu-button')
   menuButton.style.cursor = 'auto';
-  menuButton.onclick = null;
+  menuButton.ontouchstart = null
+
+  var bellowNav = document.getElementById('bellow-nav')
+  bellowNav.style.display = 'none'
 }
 
 function closeForm() {
-  var form = document.getElementById('container-form')
-  form.classList.remove('show')
-  document.body.classList.remove('hide-scrollbar');
+  var formDiv = document.getElementById('container-form')
+  formDiv.classList.remove('show')
 
   var menuButton = document.getElementById('menu-button')
   menuButton.style.cursor = 'pointer';
-  menuButton.onclick = toggleNavBar;
+  menuButton.ontouchstart = toggleNavBar;
+
+  var bellowNav = document.getElementById('bellow-nav')
+  bellowNav.style.display = 'block'
+  hideBellowNav = false
 }
