@@ -37,6 +37,10 @@ function toggleNavBar() {
 }
 
 function scrollToDiv(id) {
+
+  var navList = document.getElementById('nav-list')
+  navList.style.transition = 'opacity 0ms, transform 0ms'
+
   var bellowNav = document.getElementById('bellow-nav')
   bellowNav.style.display = 'block'
   hideBellowNav = false
@@ -46,6 +50,9 @@ function scrollToDiv(id) {
 
   var nav = document.getElementById('nav')
   nav.classList.toggle('show')
+  setTimeout(() => {
+    navList.style.transition = 'opacity 300ms, transform 300ms'
+  }, 500)
 }
 
 function openForm() {
