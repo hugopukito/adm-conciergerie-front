@@ -1,4 +1,4 @@
-var firstForm = document.getElementById("firstForm");
+var firstForm = document.getElementById("first_form");
 
 firstForm.addEventListener("submit", function(event) {
   event.preventDefault();
@@ -59,7 +59,7 @@ function openForm() {
   var nav = document.getElementById('nav')
   nav.classList.toggle('show')
 
-  var formDiv = document.getElementById('container-form')
+  var formDiv = document.getElementById('form-background')
   formDiv.classList.add('show')
 
   var menuButton = document.getElementById('menu-button')
@@ -71,7 +71,7 @@ function openForm() {
 }
 
 function closeForm() {
-  var formDiv = document.getElementById('container-form')
+  var formDiv = document.getElementById('form-background')
   formDiv.classList.remove('show')
 
   var menuButton = document.getElementById('menu-button')
@@ -81,4 +81,29 @@ function closeForm() {
   var bellowNav = document.getElementById('bellow-nav')
   bellowNav.style.display = 'block'
   hideBellowNav = false
+}
+
+var firstFormActive = true
+var secondFormActive = false
+
+function showFirstForm() {
+  var firstForm = document.getElementById('first_form')
+  var secondForm = document.getElementById('second_form')
+  if (!firstFormActive) {
+    firstForm.classList.add('show')
+    firstFormActive = true
+  }
+  secondForm.classList.remove('show')
+  secondFormActive = false
+}
+
+function showSecondForm() {
+  var firstForm = document.getElementById('first_form')
+  var secondForm = document.getElementById('second_form')
+  if (!secondFormActive) {
+    secondForm.classList.add('show')
+    secondFormActive = true
+  }
+  firstForm.classList.remove('show')
+  firstFormActive = false
 }

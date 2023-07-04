@@ -24,85 +24,125 @@
           <li><a ontouchstart="scrollToDiv('contact')">Contact</a></li>
         </ul>
       </nav>
-      <div id="container-form" class="container-form">
-        <div class="form">
-          <div class="cross" ontouchstart="closeForm()">
-            <img src="images/cross.png">
+      <div id="form-background" class="form-background">
+        <div class="form-container">
+          <div class="form-stuff">
+            <div class="cross" ontouchstart="closeForm()">
+              <img src="images/cross.png">
+            </div>
+            <div class="title">FORMULAIRES</div>
+            <div class="options">
+              <div ontouchstart="showFirstForm()">first</div>
+              <div ontouchstart="showSecondForm()">second</div>
+            </div>
+            <form id="first_form" class="form show">
+              <div class="element">
+                <div>Type de bien</div>
+                <label>
+                  <input type="radio" name="propertyType" value="appart">
+                  Appartement
+                </label>
+                <label>
+                  <input type="radio" name="propertyType" value="house">
+                  Maison
+                </label>
+              </div>
+              <div class="element surface">
+                <div>Surface</div>
+                <label>
+                  <input type="text" name="surface">
+                  15 à +200m2
+                </label>
+              </div>
+              <div class="element">
+                <div>État du bien</div>
+                <label>
+                  <input type="radio" name="propertyCondition" value="renovate">
+                  À rénover
+                </label>
+                <label>
+                  <input type="radio" name="propertyCondition" value="decorate">
+                  À décorer
+                </label>
+                <label>
+                  <input type="radio" name="propertyCondition" value="ready">
+                  Prêt à louer
+                </label>
+              </div>
+              <div class="element">
+                <div>Coordonnées</div>
+                <label>
+                  Adresse mail <br>
+                  <input type="text" name="mail"> <br>
+                </label>
+                <label>
+                  N° de tél <br>
+                  <input type="text" name="phone">
+                </label>
+              </div>
+              <div class="element">
+                <div>Note additionnelle</div>
+                <textarea rows="5" cols="33" name="notes"></textarea>
+              </div>
+              <div class="element">
+                <input type="submit" value="Envoyer">
+              </div>
+            </form>
+            <form id="second_form" class="form">
+              <div class="element">
+                <div>Type de bien</div>
+                <label>
+                  <input type="radio" name="propertyType" value="appart">
+                  Appartement
+                </label>
+                <label>
+                  <input type="radio" name="propertyType" value="house">
+                  Maison
+                </label>
+              </div>
+            </form>
           </div>
-          <div>—FORMULAIRE—</div>
-          
-          <form id="firstForm" class="firstForm">
-            <div>Type de bien</div>
-            <label>
-              <input type="radio" name="propertyType" value="appart">
-              Appartement
-            </label>
-            <label>
-              <input type="radio" name="propertyType" value="house">
-              Maison
-            </label>
-
-            <div>Surface</div>
-            <label>
-              <input type="text" name="surface">
-              15 à 200m2 et +
-            </label>
-            
-            <div>État du bien</div>
-            <label>
-              <input type="radio" name="propertyCondition" value="renovate">
-              À rénover
-            </label>
-            <label>
-              <input type="radio" name="propertyCondition" value="decorate">
-              À décorer
-            </label>
-            <label>
-              <input type="radio" name="propertyCondition" value="ready">
-              Prêt à louer
-            </label>
-
-            <div>Coordonnées</div>
-            <label>
-              <input type="text" name="mail">
-              Adresse mail
-            </label>
-            <label>
-              <input type="text" name="phone">
-              n° de tél
-            </label>
-
-            <div>Note additionnelle</div>
-            <textarea rows="5" cols="33" name="notes"></textarea>
-              
-            <input type="submit" value="Envoyer">
-          </form>
         </div>
       </div>
       <div id="bellow-nav">
         <div class="img-clermont"></div>
-        <div id="conciergerie" class="element">
-          —CONCIERGERIE—
-          ADM CONCIERGERIE
-          Nous proposons de la conciergerie privée pour les propriétaires de bien immobilier locatif courte durée en proposant de la rénovation, de la décoration d’intérieur et de la communication digitale de façon unique
-          Nous prenons en charge à 100% tout le processus de gestion des biens locatifs courte durée
-          ADM s'occupe de tout de A à Z.
-        </div>
-        <div id="nos_services" class="element">
-          —NOS SERVICES—
-          Conciergerie : service de conciergerie avec suivi personnalisé
-          Rénovation : Augmenter le confort et le bienêtre du séjour
-          Décoration d'intérieur : Augmenter l'attractivité des biens
-          Communication digitale : Augmenter la visibilité des annonces locatives 
-          Prestations de services : prestations de nettoyage sur demande.
-        </div>
-        <div id="contact" class="element">
-          —CONTACT—
-          Avec le logo
-          Adresse mail : ADM.CONCIERGERIE.63@gmail.com
-          Téléphone portable : 0787113747
-          Instagram : adm.conciergerie
-          Adresse : 14 avenue Carnot Clermont-Ferrand 63000 
+        <div class="elements">
+          <div id="conciergerie" class="element">
+            <div class="title">
+              CONCIERGERIE
+            </div>
+            <div class="content">
+              <div class="second-title"><b>ADM CONCIERGERIE</b></div>
+              <div>Nous proposons de la conciergerie privée pour les propriétaires de bien immobilier locatif courte durée en proposant de la rénovation, de la décoration d'intérieur et de la communication digitale de façon unique.</div>
+              <div>Nous prenons en charge à 100% tout le processus de gestion des biens locatifs courte durée ADM s'occupe de tout de A à Z.</div>
+            </div>
+          </div>
+          <div id="nos_services" class="element">
+            <div class="title">
+              NOS SERVICES
+            </div>
+            <div class="content">
+              <div><b>Conciergerie :</b> service de conciergerie avec suivi personnalisé.</div>
+              <div><b>Rénovation :</b> Augmenter le confort et le bienêtre du séjour.</div>
+              <div><b>Décoration d'intérieur :</b> Augmenter l'attractivité des biens.</div>
+              <div><b>Communication digitale :</b> Augmenter la visibilité des annonces locatives.</div>
+              <div><b>Prestations de services :</b> prestations de nettoyage sur demande.</div>
+            </div>
+          </div>
+          <div id="contact" class="element">
+            <div class="title">
+              CONTACT
+            </div>
+            <div class="content">
+              <div><b>Mail :</b> adm.conciergerie.63@gmail.com</div>
+              <div><b>Téléphone portable :</b> 07.87.11.37.47</div>
+              <div><b>Instagram :</b> adm.conciergerie</div>
+              <div><b>Adresse :</b> 14 avenue Carnot Clermont-Ferrand 63000</div>
+              <div class="logo">
+                <img src="images/logo.jpg">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
