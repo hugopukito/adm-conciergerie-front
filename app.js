@@ -1,4 +1,5 @@
 var firstForm = document.getElementById("first_form");
+var secondForm = document.getElementById("second_form");
 
 firstForm.addEventListener("submit", function(event) {
   event.preventDefault();
@@ -18,6 +19,13 @@ firstForm.addEventListener("submit", function(event) {
   // .catch(error => {
   //   console.error('Error:', error);
   // });
+});
+
+secondForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  var formData = new FormData(secondForm);
+  console.log(formData)
 });
 
 var hideBellowNav = false
