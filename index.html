@@ -24,16 +24,24 @@
           <li><a ontouchstart="scrollToDiv('contact')">Contact</a></li>
         </ul>
       </nav>
+      <nav class="desktop">
+        <ul class="desktop">
+          <li><a href="#conciergerie">Conciergerie</a></li>
+          <li><a href="#nos_services">Nos services</a></li>
+          <li><a onclick="openForm()">Formulaire</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
       <div id="form-background" class="form-background">
         <div class="form-container">
           <div class="form-stuff">
-            <div class="cross" ontouchstart="closeForm()">
+            <div class="cross" ontouchstart="closeForm()" onclick="closeForm()">
               <img src="images/cross.png">
             </div>
             <div class="title">FORMULAIRES</div>
             <div class="options">
-              <div ontouchstart="showFirstForm()">first</div>
-              <div ontouchstart="showSecondForm()">second</div>
+              <div ontouchstart="showFirstForm()" onclick="showFirstForm()">first</div>
+              <div ontouchstart="showSecondForm()" onclick="showSecondForm()">second</div>
             </div>
             <form id="first_form" class="form show">
               <div class="element">

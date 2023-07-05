@@ -37,7 +37,6 @@ function toggleNavBar() {
 }
 
 function scrollToDiv(id) {
-
   var navList = document.getElementById('nav-list')
   navList.style.transition = 'opacity 0ms, transform 0ms'
 
