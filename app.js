@@ -73,6 +73,7 @@ function openForm() {
   menuButton.style.cursor = 'auto';
   menuButton.ontouchstart = null
 
+  // A dégager et mettre logique scroll bar hidden sur tout le document quand nécessaire
   var bellowNav = document.getElementById('bellow-nav')
   bellowNav.style.display = 'none'
 }
