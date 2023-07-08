@@ -5,20 +5,28 @@ firstForm.addEventListener("submit", function(event) {
   event.preventDefault();
 
   var formData = new FormData(firstForm);
-  console.log(formData)
 
-  // fetch(form.action, {
-  //   method: 'POST',
-  //   body: formData
-  // })
-  // .then(response => response.text())
-  // .then(data => {
-  //   console.log(data);
-  //   // Process the response data as needed
-  // })
-  // .catch(error => {
-  //   console.error('Error:', error);
-  // });
+  var jsonObject = {};
+  formData.forEach(function(value, key) {
+    if (!isNaN(value) && value.trim() !== '') {
+      jsonObject[key] = parseInt(value, 10);
+    } else {
+      jsonObject[key] = value;
+    }
+  });
+  var jsonData = JSON.stringify(jsonObject);
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'http://localhost:8080/forms', true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onreadystatechange = function() {
+    if (xhr.status === 201) {
+      console.log('Data sent successfully!');
+    } else {
+      console.error('Failed to send data.');
+    }
+  };
+  xhr.send(jsonData);
 });
 
 secondForm.addEventListener("submit", function(event) {
