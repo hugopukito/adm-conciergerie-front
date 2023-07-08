@@ -28,29 +28,20 @@ secondForm.addEventListener("submit", function(event) {
   console.log(formData)
 });
 
-var hideBellowNav = false
-
 function toggleNavBar() {
-  var bellowNav = document.getElementById('bellow-nav')
-  if (hideBellowNav) {
-    bellowNav.style.display = 'block'
-    hideBellowNav = false
-  } else {
-    bellowNav.style.display = 'none'
-    hideBellowNav = true
-  }
-
   var nav = document.getElementById('nav')
   nav.classList.toggle('show')
+
+  if (window.getComputedStyle(document.body).overflow != "hidden") {
+    document.body.style.overflow = "hidden"
+  } else {
+    document.body.style.overflow = "visible"
+  }
 }
 
 function scrollToDiv(id) {
   var navList = document.getElementById('nav-list')
   navList.style.transition = 'opacity 0ms, transform 0ms'
-
-  var bellowNav = document.getElementById('bellow-nav')
-  bellowNav.style.display = 'block'
-  hideBellowNav = false
 
   var targetDiv = document.getElementById(id)
   targetDiv.scrollIntoView()
@@ -60,11 +51,11 @@ function scrollToDiv(id) {
   setTimeout(() => {
     navList.style.transition = 'opacity 300ms, transform 300ms'
   }, 500)
+  document.body.style.overflow = "visible"
 }
 
 function openForm() {
-  var nav = document.getElementById('nav')
-  nav.classList.toggle('show')
+  toggleNavBar()
 
   var formDiv = document.getElementById('form-background')
   formDiv.classList.add('show')
@@ -73,9 +64,7 @@ function openForm() {
   menuButton.style.cursor = 'auto';
   menuButton.ontouchstart = null
 
-  // A dégager et mettre logique scroll bar hidden sur tout le document quand nécessaire
-  var bellowNav = document.getElementById('bellow-nav')
-  bellowNav.style.display = 'none'
+  document.body.style.overflow = "hidden"
 }
 
 function closeForm() {
@@ -86,9 +75,7 @@ function closeForm() {
   menuButton.style.cursor = 'pointer';
   menuButton.ontouchstart = toggleNavBar;
 
-  var bellowNav = document.getElementById('bellow-nav')
-  bellowNav.style.display = 'block'
-  hideBellowNav = false
+  document.body.style.overflow = "visible"
 }
 
 var firstFormActive = true
