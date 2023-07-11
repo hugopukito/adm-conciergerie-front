@@ -6,7 +6,6 @@ firstForm.addEventListener("submit", function(event) {
   var formData = new FormData(firstForm);
   var submitForm1 = document.getElementById("submit_form_1")
   var errorMsg = document.getElementById("error_msg")
-  console.log(submitForm1)
 
   var jsonObject = {};
   formData.forEach(function(value, key) {
@@ -18,8 +17,10 @@ firstForm.addEventListener("submit", function(event) {
   });
   var jsonData = JSON.stringify(jsonObject);
 
+  var url = "http://adm-conciergerie.com/back/forms"
+  //url = "http://127.0.0.1:8080/forms"
   var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'http://adm-conciergerie.com/back/forms', true);
+  xhr.open('POST', url, true);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.onreadystatechange = function() {
     submitForm1.style.color = 'white';
