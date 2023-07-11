@@ -57,10 +57,12 @@ function toggleNavBar() {
   var nav = document.getElementById('nav')
   nav.classList.toggle('show')
 
-  if (window.getComputedStyle(document.body).overflow != "hidden") {
-    document.body.style.overflow = "hidden"
+  if (window.getComputedStyle(document.body).overflow !== "hidden" || window.getComputedStyle(document.documentElement).overflow !== "hidden") {
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
   } else {
-    document.body.style.overflow = "visible"
+    document.body.style.overflow = "visible";
+    document.documentElement.style.overflow = "visible";
   }
 }
 
@@ -90,6 +92,7 @@ function openForm() {
   menuButton.ontouchstart = null
 
   document.body.style.overflow = "hidden"
+  document.documentElement.style.overflow = "hidden"
 }
 
 function closeForm() {
@@ -101,6 +104,7 @@ function closeForm() {
   menuButton.ontouchstart = toggleNavBar;
 
   document.body.style.overflow = "visible"
+  document.documentElement.style.overflow = "hidden"
 }
 
 var firstFormActive = true
