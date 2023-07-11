@@ -71,6 +71,7 @@ function scrollToDiv(id) {
     navList.style.transition = 'opacity 300ms, transform 300ms'
   }, 500)
   document.body.style.overflow = "visible"
+  document.documentElement.style.overflow = "visible"
 }
 
 function openForm() {
