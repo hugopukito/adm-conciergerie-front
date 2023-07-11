@@ -104,7 +104,7 @@ function closeForm() {
   menuButton.ontouchstart = toggleNavBar;
 
   document.body.style.overflow = "visible"
-  document.documentElement.style.overflow = "hidden"
+  document.documentElement.style.overflow = "visible"
 }
 
 var firstFormActive = true
