@@ -57,7 +57,7 @@ body {
 
       list-style-type: none;
 
-      li a {
+      li a, li div {
         text-decoration: none;
         color: white;
         cursor: pointer;
@@ -144,6 +144,7 @@ body {
           text-align: center;
           cursor: pointer;
           box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.3);
+          border-radius: 10px;
         }
       }
 
@@ -155,24 +156,79 @@ body {
         display: flex;
         flex-direction: column;
         gap: 50px;
+        width: 100%;
 
-        .element {
+        .form-elt {
+          &:not(&.submit) {
+            box-shadow: 0px 0px 10px 7px rgba(255, 255, 255, 1);
+            border-radius: 10px;
+            padding: 15px;
+          }
+
+          &.submit {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 40px;
+
+            .error-msg-container {
+              position: absolute;
+              .error-msg {
+                display: none;
+                position: relative;
+                text-align: center;
+                left: 250px;
+                color: red;
+              }
+            }
+          }
+
+          .title {
+            font-size: 50px;
+            margin-bottom: 20px;
+          }
+
           &.surface {
             input {
               width: 400px;
             }
           }
+
           label {
             font-size: 40px;
+            display: flex;
+            gap: 30px;
+          }
+          &.coord {
+            display: flex;
+            flex-direction: column;
+            .labels-inputs {
+              display: flex;
+              align-items: center;
+              gap: 30px;
+              > div {
+                display: flex;
+                flex-direction: column;
+                input {
+                  width: 400px;
+                  font-size: 35px;
+                }
+                > div {
+                  font-size: 40px;
+                }
+              }
+            }
           }
           input[type="radio"] {
-            transform: scale(1.5);
+            transform: scale(2.5);
           }
           input[type="submit"] {
-            font-size: 30px;
+            font-size: 40px;
             padding: 10px 20px;
+            border-radius: 10px;
           }
-          input[type="text"], textarea {
+          input[type="text"], input[type="number"], textarea {
+            border-radius: 7px;
             font-size: 30px;
           }
         }

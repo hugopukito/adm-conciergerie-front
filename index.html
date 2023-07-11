@@ -18,10 +18,10 @@
       </div>
       <nav id="nav">
         <ul id="nav-list">
-          <li><a ontouchstart="scrollToDiv('conciergerie')">Conciergerie</a></li>
-          <li><a ontouchstart="scrollToDiv('nos_services')">Nos services</a></li>
-          <li><a ontouchstart="openForm()">Formulaire</a></li>
-          <li><a ontouchstart="scrollToDiv('contact')">Contact</a></li>
+          <li><div ontouchstart="scrollToDiv('conciergerie')">Conciergerie</div></li>
+          <li><div ontouchstart="scrollToDiv('nos_services')">Nos services</div></li>
+          <li><div ontouchstart="openForm()">Formulaire</div></li>
+          <li><div ontouchstart="scrollToDiv('contact')">Contact</div></li>
         </ul>
       </nav>
       <nav class="desktop">
@@ -44,60 +44,59 @@
               <div ontouchstart="showSecondForm()" onclick="showSecondForm()">second</div>
             </div>
             <form id="first_form" class="form show">
-              <div class="element">
-                <div>Type de bien</div>
+              <div class="form-elt">
+                <div class="title">Type de bien :</div>
                 <label>
-                  <input type="radio" name="propertyType" value="apartment">
-                  Appartement
+                  <input type="radio" name="propertyType" value="apartment"> Appartement
                 </label>
                 <label>
-                  <input type="radio" name="propertyType" value="house">
-                  Maison
+                  <input type="radio" name="propertyType" value="house"> Maison
                 </label>
               </div>
-              <div class="element surface">
-                <div>Surface</div>
+              <div class="form-elt surface">
+                <div class="title">Surface :</div>
                 <label>
-                  <input type="number" name="surface">
-                  15 à +200m2
+                  <input type="number" name="surface"> 15 à +200m2
                 </label>
               </div>
-              <div class="element">
-                <div>État du bien</div>
+              <div class="form-elt">
+                <div class="title">État du bien :</div>
                 <label>
-                  <input type="radio" name="propertyCondition" value="renovate">
-                  À rénover
+                  <input type="radio" name="propertyCondition" value="renovate"> À rénover
                 </label>
                 <label>
-                  <input type="radio" name="propertyCondition" value="decorate">
-                  À décorer
+                  <input type="radio" name="propertyCondition" value="decorate"> À décorer
                 </label>
                 <label>
-                  <input type="radio" name="propertyCondition" value="ready">
-                  Prêt à louer
+                  <input type="radio" name="propertyCondition" value="ready"> Prêt à louer
                 </label>
               </div>
-              <div class="element">
-                <div>Coordonnées</div>
-                <label>
-                  Adresse mail  <br>
-                  <input type="text" name="mail"> <br>
-                </label>
-                <label>
-                  N° de tél <br>
-                  <input type="text" name="phone">
-                </label>
+              <div class="form-elt coord">
+                <div class="title">Coordonnées :</div>
+                <div class="labels-inputs">
+                  <div class="labels">
+                    <div>Adresse mail :</div>
+                    <div>N° de tél : </div>
+                  </div>
+                  <div class="inputs">
+                    <input type="text" name="mail">
+                    <input type="text" name="phone">
+                  </div>
+                </div>
               </div>
-              <div class="element">
-                <div>Note additionnelle</div>
+              <div class="form-elt">
+                <div class="title">Note additionnelle :</div>
                 <textarea rows="5" cols="33" name="notes"></textarea>
               </div>
-              <div class="element">
-                <input type="submit" value="Envoyer">
+              <div class="form-elt submit">
+                <input id="submit_form_1" type="submit" value="Envoyer">
+                <div class="error-msg-container">
+                  <div class="error-msg" id="error_msg">Erreur <br> formulaire</div>
+                </div>
               </div>
             </form>
             <form id="second_form" class="form">
-              <div class="element">
+              <div class="form-elt">
                 <div>Type de bien</div>
                 <label>
                   <input type="radio" name="propertyType" value="appart">
@@ -108,7 +107,7 @@
                   Maison
                 </label>
               </div>
-              <div class="element">
+              <div class="form-elt">
                 <input type="submit" value="Envoyer">
               </div>
             </form>

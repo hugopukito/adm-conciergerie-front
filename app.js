@@ -5,6 +5,9 @@ firstForm.addEventListener("submit", function(event) {
   event.preventDefault();
 
   var formData = new FormData(firstForm);
+  var submitForm1 = document.getElementById("submit_form_1")
+  var errorMsg = document.getElementById("error_msg")
+  console.log(submitForm1)
 
   var jsonObject = {};
   formData.forEach(function(value, key) {
@@ -20,11 +23,25 @@ firstForm.addEventListener("submit", function(event) {
   xhr.open('POST', 'http://adm-conciergerie.com/back/forms', true);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.onreadystatechange = function() {
+    submitForm1.style.color = 'white';
+    submitForm1.style.fontWeight = 'bold';
     if (xhr.status === 201) {
-      console.log('Data sent successfully!');
+      submitForm1.style.backgroundColor = 'green';
+      // Reset ???
+      setTimeout(() => {
+        closeForm()
+      }, 3000)
     } else {
-      console.error('Failed to send data.');
+      submitForm1.style.backgroundColor = 'red';
+      errorMsg.style.display = 'block'
     }
+    // Reset ???
+    setTimeout(() => {
+      submitForm1.style.backgroundColor = 'transparent';
+      submitForm1.style.color = 'black';
+      submitForm1.style.fontWeight = 'normal';
+      errorMsg.style.display = 'none'
+    }, 3000)
   };
   xhr.send(jsonData);
 });
