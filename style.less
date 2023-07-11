@@ -7,6 +7,7 @@ body {
   padding: 0;
   color: white;
   scroll-behavior: smooth;
+  position: relative;
 }
 
 .main {
@@ -103,7 +104,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    position: absolute;
+    position: fixed;
     border-radius: 10px;
     overflow: auto;
 
@@ -132,20 +133,6 @@ body {
   
       .title {
         font-size: 60px;
-      }
-
-      .options {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        & > div {
-          width: 50%;
-          text-align: center;
-          cursor: pointer;
-          box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.3);
-          border-radius: 10px;
-        }
       }
 
       .form {

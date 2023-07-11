@@ -1,5 +1,4 @@
 var firstForm = document.getElementById("first_form");
-var secondForm = document.getElementById("second_form");
 
 firstForm.addEventListener("submit", function(event) {
   event.preventDefault();
@@ -44,13 +43,6 @@ firstForm.addEventListener("submit", function(event) {
     }, 3000)
   };
   xhr.send(jsonData);
-});
-
-secondForm.addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  var formData = new FormData(secondForm);
-  console.log(formData)
 });
 
 function toggleNavBar() {
@@ -105,29 +97,4 @@ function closeForm() {
 
   document.body.style.overflow = "visible"
   document.documentElement.style.overflow = "visible"
-}
-
-var firstFormActive = true
-var secondFormActive = false
-
-function showFirstForm() {
-  var firstForm = document.getElementById('first_form')
-  var secondForm = document.getElementById('second_form')
-  if (!firstFormActive) {
-    firstForm.classList.add('show')
-    firstFormActive = true
-  }
-  secondForm.classList.remove('show')
-  secondFormActive = false
-}
-
-function showSecondForm() {
-  var firstForm = document.getElementById('first_form')
-  var secondForm = document.getElementById('second_form')
-  if (!secondFormActive) {
-    secondForm.classList.add('show')
-    secondFormActive = true
-  }
-  firstForm.classList.remove('show')
-  firstFormActive = false
 }
