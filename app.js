@@ -6,19 +6,38 @@ firstForm.addEventListener("submit", function(event) {
   var formData = new FormData(firstForm);
   var submitForm1 = document.getElementById("submit_form_1")
   var errorMsg = document.getElementById("error_msg")
+  var hasError = false;
 
   var jsonObject = {};
   formData.forEach(function(value, key) {
-    if (!isNaN(value) && value.trim() !== '') {
+    if (!isNaN(value) && value.trim() !== '' && key == 'surface') {
       jsonObject[key] = parseInt(value, 10);
+      if (parseInt(value, 10) < 15) {
+        submitForm1.style.backgroundColor = 'red';
+        errorMsg.style.display = 'block'
+        errorMsg.innerHTML = 'Erreur <br> surface'
+        hasError = true
+        return
+      }
     } else {
       jsonObject[key] = value;
     }
   });
+
+  if (hasError) {
+    setTimeout(() => {
+      submitForm1.style.backgroundColor = 'transparent';
+      submitForm1.style.color = 'black';
+      submitForm1.style.fontWeight = 'normal';
+      errorMsg.style.display = 'none'
+    }, 3000)
+    return;
+  }
+
   var jsonData = JSON.stringify(jsonObject);
 
   var url = 'http://adm-conciergerie.com/back/forms'
-  // url = 'http://localhost:8080/forms'
+  // url = 'http://127.0.0.1:8080/forms'
   var xhr = new XMLHttpRequest();
   xhr.open('POST', url, true);
   xhr.setRequestHeader('Content-Type', 'application/json');
@@ -27,15 +46,14 @@ firstForm.addEventListener("submit", function(event) {
     submitForm1.style.fontWeight = 'bold';
     if (xhr.status === 201) {
       submitForm1.style.backgroundColor = 'green';
-      // Reset ???
       setTimeout(() => {
         closeForm()
       }, 3000)
     } else {
       submitForm1.style.backgroundColor = 'red';
       errorMsg.style.display = 'block'
+      errorMsg.innerHTML = 'Erreur <br> formulaire'
     }
-    // Reset ???
     setTimeout(() => {
       submitForm1.style.backgroundColor = 'transparent';
       submitForm1.style.color = 'black';
