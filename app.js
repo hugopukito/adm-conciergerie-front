@@ -17,7 +17,7 @@ firstForm.addEventListener("submit", function(event) {
   });
   var jsonData = JSON.stringify(jsonObject);
 
-  var url = 'http://151.80.155.148/back/forms'
+  var url = 'http://adm-conciergerie.com/back/forms'
   // url = 'http://localhost:8080/forms'
   var xhr = new XMLHttpRequest();
   xhr.open('POST', url, true);
