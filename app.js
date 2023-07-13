@@ -10,7 +10,7 @@ firstForm.addEventListener("submit", function(event) {
 
   var jsonObject = {};
   formData.forEach(function(value, key) {
-    if (!isNaN(value) && value.trim() !== '' && key == 'surface') {
+    if (key == 'surface') {
       jsonObject[key] = parseInt(value, 10);
       if (parseInt(value, 10) < 15) {
         submitForm1.style.backgroundColor = 'red';
