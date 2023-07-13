@@ -14,6 +14,8 @@ firstForm.addEventListener("submit", function(event) {
       jsonObject[key] = parseInt(value, 10);
       if (parseInt(value, 10) < 15) {
         submitForm1.style.backgroundColor = 'red';
+        submitForm1.style.border = '2px solid white'
+        submitForm1.style.color = 'white'
         errorMsg.style.display = 'block'
         errorMsg.innerHTML = 'Erreur <br> surface'
         hasError = true
@@ -26,7 +28,8 @@ firstForm.addEventListener("submit", function(event) {
 
   if (hasError) {
     setTimeout(() => {
-      submitForm1.style.backgroundColor = 'transparent';
+      submitForm1.style.backgroundColor = 'rgb(220, 223, 80)';
+      submitForm1.style.border = '2px solid black'
       submitForm1.style.color = 'black';
       submitForm1.style.fontWeight = 'normal';
       errorMsg.style.display = 'none'
@@ -42,20 +45,25 @@ firstForm.addEventListener("submit", function(event) {
   xhr.open('POST', url, true);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.onreadystatechange = function() {
-    submitForm1.style.color = 'white';
+    submitForm1.style.color = 'black';
     submitForm1.style.fontWeight = 'bold';
     if (xhr.status === 201) {
       submitForm1.style.backgroundColor = 'green';
+      submitForm1.style.border = '2px solid white';
+      submitForm1.style.color = 'white'
       setTimeout(() => {
         closeForm()
       }, 3000)
     } else {
       submitForm1.style.backgroundColor = 'red';
+      submitForm1.style.border = '2px solid white'
+      submitForm1.style.color = 'white'
       errorMsg.style.display = 'block'
       errorMsg.innerHTML = 'Erreur <br> formulaire'
     }
     setTimeout(() => {
-      submitForm1.style.backgroundColor = 'transparent';
+      submitForm1.style.backgroundColor = 'rgb(220, 223, 80)';
+      submitForm1.style.border = '2px solid black'
       submitForm1.style.color = 'black';
       submitForm1.style.fontWeight = 'normal';
       errorMsg.style.display = 'none'
