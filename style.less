@@ -231,6 +231,14 @@ body {
     }
   }
 
+  .video {
+    margin-bottom: 100px;
+    video {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
   .img-clermont {
     height: 500px;
     background-image: url('images/clermont.jpg');
@@ -255,6 +263,7 @@ body {
       .title {
         color: @custom_yellow;
         font-size: 26px;
+        text-align: center;
       }
 
       .content {
@@ -262,26 +271,36 @@ body {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        gap: 20px;
+        gap: 40px;
 
-        max-width: 1000px;
+        &.conciergerie {
+          img {
+            width: 100vw;
+          }
+          .sub-content {
+            margin: 0 30px;
+          }
+        }
 
         text-align: center;
         font-size: 20px;
 
         .subtitle {
           border-bottom: 2px solid @custom_yellow;
+          width: fit-content;
+          margin: 0 auto;
+          margin-bottom: 20px;
         }
         .sub-content {
           margin-bottom: 20px;
         }
-        
-        .logo {
-          img {
-            height: 250px;
-          }
-          margin: 30px;
+      }
+              
+      .logo {
+        img {
+          height: 250px;
         }
+        margin: 30px;
       }
     }
   }
@@ -293,6 +312,13 @@ body {
 
     #nav {
       display: none;
+    }
+
+    .video {
+      video {
+        height: calc(100vh - 60px);
+        height: calc(100dvh - 60px);
+      }
     }
 
     .form-background {
@@ -401,18 +427,32 @@ body {
         .title {
           color: @custom_yellow;
           font-size: 25px;
+          margin-bottom: 50px;
         }
   
         .content {
           font-size: 20px;
+          margin: 0 80px;
           
-          .logo {
+          &.conciergerie {
+            flex-direction: row;
+
             img {
-              height: 350px;
+              max-width: 55%;
             }
-            margin-top: 50px;
-            margin-bottom: 50px;
           }
+
+          &.services, &.contact {
+            flex-direction: row;
+          }
+        }
+
+        .logo {
+          img {
+            height: 350px;
+          }
+          margin-top: 50px;
+          margin-bottom: 50px;
         }
       }
     }
