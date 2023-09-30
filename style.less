@@ -233,20 +233,22 @@ body {
   }
 
   .video {
-    margin-bottom: 100px;
+    margin-bottom: 40px;
     video {
       width: 100%;
       object-fit: cover;
     }
   }
 
-  .img-clermont {
-    height: 500px;
-    background-image: url('images/clermont.jpg');
-    background-size: cover;
-    background-position: center;
+  .top-photo {
+    margin-bottom: 100px;
+    img {
+      width: 100vw;
+    }
 
-    margin-bottom: 120px;
+    .desktop-top-contact {
+      display: none;
+    }
   }
 
   .elements {
@@ -323,11 +325,45 @@ body {
     }
 
     .video {
+      display: flex;
+      justify-content: center;
       video {
-        height: calc(100vh - 60px);
-        height: calc(100dvh - 60px);
+        width: 60%;
       }
     }
+
+    .top-photo {
+      margin-bottom: 100px;
+      img {
+        width: 57vw;
+      }
+
+      display: flex;
+
+      .desktop-top-contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 40px;
+        width: 100%;
+
+        text-align: center;
+        font-size: 20px;
+
+        .subtitle {
+          border-bottom: 2px solid @custom_yellow;
+          width: fit-content;
+          margin: 0 auto;
+          margin-bottom: 20px;
+        }
+        .sub-content {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    
 
     .form-background {
       display: none;
